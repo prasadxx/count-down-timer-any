@@ -11,10 +11,10 @@ time.tzset()
 
 
 bot = Client(
-    'MY first project',
-    api_id=7009965,
-    api_hash="06651b174c4f0591deb0ed1e5663c996",
-    bot_token="5611616797:AAFANOG4s1j283dm-UGfpVrG_wpOm_1Egz8"
+    'MY Countdownbot',
+    api_id = int(os.environ["API_ID"]),
+    api_hash = os.environ["API_HASH"],
+    bot_token = os.environ["BOT_TOKEN"]
     
 )
 
