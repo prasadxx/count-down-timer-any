@@ -12,9 +12,9 @@ time.tzset()
 
 bot = Client(
     'MY Countdownbot',
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"],
-    bot_token = os.environ["BOT_TOKEN"]
+    api_id=7009965,
+    api_hash="06651b174c4f0591deb0ed1e5663c996",
+    bot_token = "5611616797:AAFANOG4s1j283dm-UGfpVrG_wpOm_1Egz8"
     
 )
 
@@ -73,10 +73,10 @@ async def set_timer(bot, message):
                     h=user_input_time%(3600*24)//3600
                     m=user_input_time%3600//60
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **දින** {:02d}**යි**  **පැය** {:02d}**ක** **මිනිත්තු** {:02d}**යි** **ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By '.format(user_input_event, d, h, m)
+                    Countdown_TeLe_TiPs='{}\n\n⏳ **දින** {:02d}**යි**  **පැය** {:02d}**ක** **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d} **ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By '.format(user_input_event, d, h, m)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
-                    await asyncio.sleep(60)
-                    user_input_time -=60
+                    await asyncio.sleep(20)
+                    user_input_time -=20
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
             else:
                 await get_user_input_time.edit(f"🤷🏻‍♂️ I can't countdown from {user_input_time}")
