@@ -62,7 +62,7 @@ async def set_timer(bot, message):
                     m=user_input_time%3600//60
                     s=user_input_time%60
 
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **පැය** {:02d}**යි**  **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By '.format(user_input_event, h, m, s)
+                    Countdown_TeLe_TiPs='{}\n\n⏳ **පැය** {:02d}**යි**  **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By @BioVideoFullSyllubus'.format(user_input_event, h, m, s)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
                     await asyncio.sleep(7)
                     user_input_time -=7
@@ -73,7 +73,7 @@ async def set_timer(bot, message):
                     h=user_input_time%(3600*24)//3600
                     m=user_input_time%3600//60
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **දින** {:02d}**යි**  **පැය** {:02d}**ක** **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d} **ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By '.format(user_input_event, d, h, m)
+                    Countdown_TeLe_TiPs='{}\n\n⏳ **දින** {:02d}**යි**  **පැය** {:02d}**ක** **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d} **ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By @BioVideoFullSyllubus'.format(user_input_event, d, h, m, s)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
                     await asyncio.sleep(20)
                     user_input_time -=20
