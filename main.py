@@ -11,10 +11,10 @@ time.tzset()
 
 
 bot = Client(
-    'MY Countdownbot',
+    'MY first project',
     api_id=7009965,
     api_hash="06651b174c4f0591deb0ed1e5663c996",
-    bot_token = "5611616797:AAFANOG4s1j283dm-UGfpVrG_wpOm_1Egz8"
+    bot_token="5726101213:AAElmnk4zXVZiDMdHIOoxd03m-BxAJDifFw"
     
 )
 
@@ -24,62 +24,78 @@ stoptimer = False
 async def set_timer(bot, message):
     global stoptimer
     try:
+        
             dt1 = datetime.now()
             dt2 = datetime(2022,12,5,00,00,00)
             dt3 = int((dt2 - dt1).total_seconds())
             user_input_time = dt3
             user_input_event = str("🔥🔥උසස් පෙළ විභාගයට තව🔥🔥")
             get_user_input_time = await bot.send_message(message.chat.id, user_input_time)
-            await get_user_input_time.pin()
+            n=1
+            
             if stoptimer: stoptimer = False
             if 0<user_input_time<=10 :
                 while user_input_time and not stoptimer:
+                    q=n
+                    p=(30-q)
+                    t=str(q*'●'+p*'○')
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs\n\n '.format(user_input_event, s)
+                    Countdown_TeLe_TiPs='{}{:02}\n\n\n⏳ **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\n\n{:02}\n\nPowered By @BioVideoFullSyllubus'.format(user_input_event,t , s,t)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
-                    await asyncio.sleep(1)
-                    user_input_time -=1
+                    await asyncio.sleep(2)
+                    n+=1
+                    if n>30:
+                        n=n-30
+                    user_input_time -=2 
             elif 10<user_input_time<60:
                 while user_input_time>0 and not stoptimer:
+                    q=n
+                    p=(30-q)
+                    t=str(q*'●'+p*'○')
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs\n\n '.format(user_input_event, s)
+                    Countdown_TeLe_TiPs='{}{:02}\n\n\n⏳ **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\n\n{:02}\n\nPowered By @BioVideoFullSyllubus"'.format(user_input_event,t ,s,t)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
                     await asyncio.sleep(3)
-                    user_input_time -=3
-                await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
+                    n+=1
+                    if n>30:
+                        n=n-30
+                    user_input_time -=3  
+                await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")    
             elif 60<=user_input_time<3600:
                 while user_input_time>0 and not stoptimer:
+                    q=n
+                    p=(30-q)
+                    t=str(q*'●'+p*'○')
                     m=user_input_time%3600//60
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **මිනිත්තු** {:02d}**යි**  **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs\n\n '.format(user_input_event, m, s)
-                    finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
-                    await asyncio.sleep(3)
-                    user_input_time -=3
-                await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
-            elif 3600<=user_input_time<86400:
-                while user_input_time>0 and not stoptimer:
-                    h=user_input_time%(3600*24)//3600
-                    m=user_input_time%3600//60
-                    s=user_input_time%60
-
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **පැය** {:02d}**යි**  **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By @BioVideoFullSyllubus'.format(user_input_event, h, m, s)
+                    Countdown_TeLe_TiPs='{}{:02}\n\n\n⏳ **මිනිත්තු** {:02d}**යි**  **තත්පර** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\n\n{:02}\n\nPowered By @BioVideoFullSyllubus"'.format(user_input_event,t, m, s,t)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
                     await asyncio.sleep(7)
+                    n+=1
+                    if n>30:
+                        n=n-30
                     user_input_time -=7
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
             elif user_input_time>=86400:
                 while user_input_time>0 and not stoptimer:
+                    q=n
+                    p=(30-q)
+                    t=str(q*'●'+p*'○')
                     d=user_input_time//(3600*24)
                     h=user_input_time%(3600*24)//3600
                     m=user_input_time%3600//60
-                    s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ **දින** {:02d}**යි**  **පැය** {:02d}**ක** **මිනිත්තු** {:02d}**යි** **තත්පර** {:02d} **ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\nPowered By @BioVideoFullSyllubus'.format(user_input_event, d, h, m, s)
+                    
+                    Countdown_TeLe_TiPs='{}{:02}\n\n\n⏳ **දින** {:02d}**යි**  **පැය** {:02d}**යි** **මිනිත්තු** {:02d}**ක** කාලයක් තිබෙයි. 📚\n\n<i>"ඔබ තවමත් ප්‍රමාද නැත"</i>\n\n\n{:02}\n\nPowered By @BioVideoFullSyllubus'.format(user_input_event,t, d, h, m, t)
                     finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
-                    await asyncio.sleep(20)
-                    user_input_time -=20
+                    await asyncio.sleep(90)
+                    n+=1
+                    if n>30:
+                        n=n-30
+                    user_input_time -=90
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
             else:
                 await get_user_input_time.edit(f"🤷🏻‍♂️ I can't countdown from {user_input_time}")
+            
                 
     except FloodWait as e:
         await asyncio.sleep(e.x)
