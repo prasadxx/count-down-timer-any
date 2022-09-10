@@ -14,7 +14,7 @@ bot = Client(
     'MY first project',
     api_id=7009965,
     api_hash="06651b174c4f0591deb0ed1e5663c996",
-    bot_token="5726101213:AAElmnk4zXVZiDMdHIOoxd03m-BxAJDifFw"
+    bot_token="5611616797:AAFANOG4s1j283dm-UGfpVrG_wpOm_1Egz8"
     
 )
 
